@@ -1,5 +1,5 @@
-streamlit==1.22.0
-requests==2.31.0
+streamlit
+requests
 assemblyai
-streamlit-mic-recorder==0.0.4
-yt-dlp==2024.10.1
+streamlit-mic-recorder
+yt-dlp
