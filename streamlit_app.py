@@ -1,7 +1,8 @@
 import streamlit as st
-import websocket
+import sounddevice as sd
+import numpy as np
 import json
-import pyaudio
+import websocket
 import threading
 
 # AssemblyAI API key
@@ -15,13 +16,8 @@ st.write("Speak something...")
 transcription_placeholder = st.empty()
 
 # Audio stream settings
-CHUNK = 4096  # Number of audio frames per buffer
-FORMAT = pyaudio.paInt16  # 16-bit PCM format
-CHANNELS = 1  # Mono audio
-RATE = 16000  # Sample rate in Hz (required by AssemblyAI)
-
-# Initialize PyAudio
-audio = pyaudio.PyAudio()
+SAMPLE_RATE = 16000
+CHUNK_SIZE = 4096
 
 # Function to handle incoming WebSocket messages
 def on_message(ws, message):
@@ -38,23 +34,19 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     print("WebSocket Connection Opened")
 
-    # Open the microphone stream and send audio data in chunks
-    stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
+    # Callback to process and send audio
+    def callback(indata, frames, time, status):
+        if status:
+            print(status)
+        ws.send(indata.tobytes(), opcode=websocket.ABNF.OPCODE_BINARY)
 
-    def send_audio():
-        try:
-            while True:
-                data = stream.read(CHUNK, exception_on_overflow=False)
-                ws.send(data, opcode=websocket.ABNF.OPCODE_BINARY)
-        except Exception as e:
-            print(f"Error sending audio: {e}")
-
-    # Run the audio stream in a separate thread
-    threading.Thread(target=send_audio).start()
+    # Start the sounddevice stream and send audio in chunks
+    with sd.InputStream(samplerate=SAMPLE_RATE, channels=1, callback=callback, blocksize=CHUNK_SIZE):
+        st.write("Streaming audio...")
 
 # Start the WebSocket connection to AssemblyAI
 def start_transcription():
-    ws_url = f"wss://api.assemblyai.com/v2/realtime/ws?sample_rate={RATE}"
+    ws_url = f"wss://api.assemblyai.com/v2/realtime/ws?sample_rate={SAMPLE_RATE}"
     ws = websocket.WebSocketApp(
         ws_url,
         on_message=on_message,
@@ -67,4 +59,4 @@ def start_transcription():
 
 # Streamlit button to start transcription
 if st.button("Start Transcription"):
-    start_transcription()
+    threading.Thread(target=start_transcription).start()
