@@ -1,8 +1,7 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer
-import numpy as np
-import json
 import websocket
+import json
+import pyaudio
 import threading
 
 # AssemblyAI API key
@@ -16,7 +15,13 @@ st.write("Speak something...")
 transcription_placeholder = st.empty()
 
 # Audio stream settings
-SAMPLE_RATE = 16000
+CHUNK = 4096  # Number of audio frames per buffer
+FORMAT = pyaudio.paInt16  # 16-bit PCM format
+CHANNELS = 1  # Mono audio
+RATE = 16000  # Sample rate in Hz (required by AssemblyAI)
+
+# Initialize PyAudio
+audio = pyaudio.PyAudio()
 
 # Function to handle incoming WebSocket messages
 def on_message(ws, message):
@@ -33,22 +38,23 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     print("WebSocket Connection Opened")
 
-    # Callback to process and send audio frames
-    def audio_frame_callback(frame):
-        indata = frame.to_ndarray()
-        ws.send(indata.tobytes(), opcode=websocket.ABNF.OPCODE_BINARY)
-        return frame
+    # Open the microphone stream and send audio data in chunks
+    stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
 
-    # Use webrtc_streamer for audio only
-    webrtc_streamer(
-        key="audio-only",
-        audio_frame_callback=audio_frame_callback,
-        media_stream_constraints={"audio": True, "video": False},  # Audio-only stream
-    )
+    def send_audio():
+        try:
+            while True:
+                data = stream.read(CHUNK, exception_on_overflow=False)
+                ws.send(data, opcode=websocket.ABNF.OPCODE_BINARY)
+        except Exception as e:
+            print(f"Error sending audio: {e}")
+
+    # Run the audio stream in a separate thread
+    threading.Thread(target=send_audio).start()
 
 # Start the WebSocket connection to AssemblyAI
 def start_transcription():
-    ws_url = f"wss://api.assemblyai.com/v2/realtime/ws?sample_rate={SAMPLE_RATE}"
+    ws_url = f"wss://api.assemblyai.com/v2/realtime/ws?sample_rate={RATE}"
     ws = websocket.WebSocketApp(
         ws_url,
         on_message=on_message,
@@ -61,4 +67,4 @@ def start_transcription():
 
 # Streamlit button to start transcription
 if st.button("Start Transcription"):
-    threading.Thread(target=start_transcription).start()
+    start_transcription()
