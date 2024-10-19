@@ -1,5 +1,5 @@
 import streamlit as st
-import sounddevice as sd
+from streamlit_webrtc import webrtc_streamer
 import numpy as np
 import json
 import websocket
@@ -17,7 +17,6 @@ transcription_placeholder = st.empty()
 
 # Audio stream settings
 SAMPLE_RATE = 16000
-CHUNK_SIZE = 4096
 
 # Function to handle incoming WebSocket messages
 def on_message(ws, message):
@@ -34,15 +33,18 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     print("WebSocket Connection Opened")
 
-    # Callback to process and send audio
-    def callback(indata, frames, time, status):
-        if status:
-            print(status)
+    # Callback to process and send audio frames
+    def audio_frame_callback(frame):
+        indata = frame.to_ndarray()
         ws.send(indata.tobytes(), opcode=websocket.ABNF.OPCODE_BINARY)
+        return frame
 
-    # Start the sounddevice stream and send audio in chunks
-    with sd.InputStream(samplerate=SAMPLE_RATE, channels=1, callback=callback, blocksize=CHUNK_SIZE):
-        st.write("Streaming audio...")
+    # Use webrtc_streamer for audio only
+    webrtc_streamer(
+        key="audio-only",
+        audio_frame_callback=audio_frame_callback,
+        media_stream_constraints={"audio": True, "video": False},  # Audio-only stream
+    )
 
 # Start the WebSocket connection to AssemblyAI
 def start_transcription():
