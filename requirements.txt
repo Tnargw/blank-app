@@ -1,2 +1,1 @@
 streamlit~=1.39.0
-RealtimeSTT~=0.3.0
