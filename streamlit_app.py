@@ -65,7 +65,11 @@ if uploaded_file is not None:
 
 with tab3:
      if st.button("DO NOT PUSH"):
-        st.balloons()
+        for x in range(10):
+            time.sleep(1)
+            st.balloons()
+            st.snow()
+            st.balloons()
 
 
 
