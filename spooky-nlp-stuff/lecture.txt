@@ -1,0 +1,122 @@
+
+Just dropped the numbers in. I haven't shown you the steps that I do when I'm doing it in my head. So that was working alright. No, let's make a new one. So if one one trombone high.
+
+Yes. 1 trombone gives 70 decibels at the back of the room. What would be the sound intensity level at the back of the room of 76 were to play? Sorry about my monitor in the way. You mind if I chatter about this one as I walk through it a little?
+
+We know the sound intensity level for 1. That makes me consider this first one. And we have multiple of them. We've got 76 of them. That's a number.
+
+So that's what I'm finally using in the end. So 76 of them should be 70 decibels plus I'm gonna ballpark an answer first, and we'll try it in the calculator. That's getting close to a 100, and the long of close to a 100 is about 2. So 2 times 10 is about 20. So we're probably guessing 15 to 20 for this number to add to that one.
+
+Now let's try it and see. 76. It looks like this is going to actually give us 18. So 18 +70. So that's.
+
+Cool. Cool. Yes, please. So I'll be repeating this for the recording. These equations will be on the test.
+
+This one is just in line with all of the usual ones. This one is turned 90 degrees to the others. So I have a whole page of equations and then written down the side. Well, that I swear that would not be. This is usually given in the problem as a reminder.
+
+You bet. Cool. Yes, please. We're talking about the estimates. Residence.
+
+You bet. Let's see. I'll leave that for a minute. Residence. I like to give 2 definitions.
+
+1 for how to recognize it when it happens and one for how to create it so that it happens. So to create it, we want to find something that likes a particular frequency. It has a natural frequency that it vibrates well at, and then we push it or nudge it or drive it or force it at near that frequency or at that frequency. So that's how we cause it to happen. The way we recognize that it's resonance is that a small regular input tends to create a large output.
+
+That is it tends to build and the motion gets big or the sound gets big or something gets big. So we've got one way to cause it and one way to recognize it. One of my former bishops in my work, he and his wife had some fascinating vocal problems. He was having trouble speaking, and it turned out it was damaging his vocal cords. So they told him to find which frequencies his mouth and throat like.
+
+And then his vocal folds wouldn't have to work very hard to get that sound to be big. Does that make sense? So that's what musicians are all about. You've been around a powerful singer. It seems like they can belt out humongously loud sounds, and then you try and it just hurts.
+
+Well, they're careful to adjust these pipes to, like, the same frequency as the vocal folds are pushing it at the air in the columns. And that way, they seem effortless effortless effortlessly loud and powerful. Does that make sense? Cool. Well, now what next?
+
+What should we look at next? I'm gonna stop this for just a second. Realized I don't have a very good picture of this problem. Some of them that are watching the recording may not be able to see this all that way. The job is to get after me when I do stupid stuff like that.
+
+While we're looking at that, what other questions are you coming up with? Concerns? Yes, please. So Yes. I assume that they could see stay the same.
+
+That's right. If we look at so we're looking at how let me highlight that one. Share screen. So we're highlighting this one. Sneaky question.
+
+What happens to the frequency? Now I'm gonna start erasing the board, and we'll write the exact equation. As we brought something quick. Sorry. I like that better.
+
+Really stiff springs have a high frequency. That's the thing that restores it back to the middle of its motion. A large inertia, mass density sometimes plays this role. That means once it gets to the middle on its motion, it's gonna wanna keep coasting past it. So big inertia makes it take longer to just turn around and come back.
+
+So that's enough to tell us about the frequency. We don't have the amplitude. The amplitude doesn't matter. The exact equation has square roots and 2 pi stuff in that doesn't affect our thinking. Now there are subtle ways it starts to have a small difference.
+
+Would it make sense with the guitar string that if you pull the string back a long ways, that changes the tension a little bit? Normally, those effects are so small that we just never see them. So the amplitude does not affect the frequency. Crazy. I know.
+
+So that's the 4th one down. We've looked at resonance, which is like the 6th one down. So waves require a material that could carry the wave, the medium, and a disturbance that disturbs the medium, and then that medium the disturbance in the medium travels and carries energy. Describing a sound wave, appropriate vocabulary might be what kind of wave is it. It's a longitudinal wave.
+
+Frequency of a sound wave is most closely connected to pitch. Amplitude of a sound wave is most closely connected to the loudness. So we'd like to be able to talk about parts of wave that is crests and troughs on the picture to describe what's going on. The sound waves, crests are actually where the molecules have moved a long ways away from home. K.
+
+Someone was cornering me about wave fronts, and rays are kind of familiar to us. I think we've had a little practice with that, but the ray tells us that the path that the wave is traveling. But the wave fronts are a little different. Mind if I draw a couple? If we're watching waterways go towards the shore, the rest would be in rows all moving this way to the right.
+
+So there's the rig. If we happen to meet the shoreline in the main, shoreline are funny. Where it gets shallow, the wave slows down. So this is going to slow down here on this side before it goes on this side. And so that means there's the shore itself.
+
+So that means our wave fronts are gonna start to get bent. Sorry. That's a bad and terrible wave front. So that they tend to bend. So the the rays, if we ever watch the ray that goes with us, starting to turn.
+
+And so it ends up hitting the shoreline square off. Really rare for waves to hit the shore at an angle unless the water is the waves are really small or the water is really deep right up to the shoreline. Kind of weird. But notice how I actually see the wave front bend as it comes into the shore, and that means that the path of the ray is going to change. Kind of weird.
+
+We're gonna see an occasion probably next time we meet where we're gonna talk about how waves actually spread out as they pass through narrow openings. That's gonna be easiest to see by watching wave fronts. I don't think I've got anything specific about wave fronts in this discussion, but rays, I think we do. And we're gonna talk about bending into the material, bending out of the material with the law of refraction. And the law of reflection mean the rays keep the same angle, but they just flip on the other side.
+
+Let's see. Law of reflection, specular diffuse reflections, the law of refraction. We need to know more or less, but not numbers. And power? So where would you like to begin next?
+
+Pick a spot or interview your neighbor and see what spot they wanna pick at. Ren, do you have something you'd like to try? I realize I'm not I guess I am sure. Supposed to be sharing my screen and didn't feel like it was. There we go.
+
+No. I didn't realize I was unmuted, but, yeah, I'm just listening. Okay. I thought the word specular was one of the weirder ones. A specular reflection is a regular or mirror style reflection.
+
+That's where we store direction. We don't mess up and lose the direction information. So with the diffuse reflection see if I can sketch that. And let's see. It can come from here and end up here.
+
+So in this case, the rays that come in are parallel to each other, and after they've reflected, they stay parallel. They keep their organization. That's an example of a speculative reflection. Even a slightly curved surface preserves something about the information about direction. Where it gets more exciting and this one's gonna be harder for me to draw.
+
+There's a round surface. Yeah. That one got lost. That makes sense. Let me come up with another application that uses the law of reflection in a particular way to absorb all the sound.
+
+Kind of an interesting game. The point of this one was it scattered or lost all of the direct information. This next one is banked. They're not so concerned about scattering it. Room I've been in, these were about 4 feet long, and they were coated with fiberglass.
+
+Like fiberglass insulation. So sound, if it were to come in here, Probably gonna kind of lose its way. And every time it passes through the fiberglass insulation, we lose 5%. And see how many bounces we've got. That's a lot of 5 percents.
+
+Now it's a multiply 5%, not subtract 5 or it's a divide 5% rather than not subtract. Does that make sense? So 95% leaves that surface. 95 of 95% leaves that one. 95 of 95 of 95% leaves that one and so on.
+
+So it's gradually getting smaller. This surface is designed to kill all the sound from bouncing off of the walls so it can measure what the source itself sounds like. Walls, rooms built like this, chambers built like this are called anechoic chambers because they don't echo. There's no reflection off the walls. K.
+
+Total squirrel, but does it help? K. Pick another topic. Let's look at it and see. We've done sound intensity levels and why the spacing is not even.
+
+I think I do have a question about pressure. What pressure is and what pressure means on this one as I remember. So this key this study guide is not entirely correct that way. So we did force and work and pressure and power and intensity. Just counting questions now.
+
+I've got 21 multiple choice questions, And I've done something that may be a little annoying on one of them, at least one of them. I give you the numbers to do a calculation, and then I give you a whole bunch of answers. And then I show you how the numbers combine to make each of those answers, including the wrong ones. I hope that's not terribly annoying. You can ask the questions in lots of different ways.
+
+What would the question look like? Could we talk about the difference between? Or let's just talk about this topic or lots of ways to ask questions. Yes, please. So on this one, just scroll down as more of them.
+
+Okay. I think that's the bottom. That's it. Yep. The other page covers the same material with a different order organization.
+
+We'll see you. Good luck. Yes, please. So sound waves are longitudinal waves. That means if the sound waves are gonna travel this way, the particles are disturbed in the same direction along the same line.
+
+And when this one moves, it bangs into these, slows this one down, these speed up, and that's how the wave propagates. That's how it travels from here to there. And even though these just oscillate in place, they hand off the energy and pass it on down to the end of where the final point is. So an interesting example, I it was our fog machine is broken. This is kind of disappointing.
+
+But if you were sitting back to the air and you heard this terrible hissing sound from a skunk whose rear end was aimed at you, would it be fair to say that you would probably hear a sound a number of seconds before the little droplets of nasty spelling stuff came by? So that's an example that the disturbance travels faster than the particles themselves that do the movement. So even when they do move, they do tend to move slowly. And then sound from my voice, the particles themselves from you would not be able to tell that I had an onion sandwich. I didn't, but, because the disturbance travels, not the molecules of onions smell.
+
+Now what I was hoping for that would have been fun, I have something that actually shoots particles of air. It's called the vortex cannon. There's some cool ones on YouTube, and they're fun to do when you've got a smoke machine because you can actually see this stuff travel. And it's really fun to watch in a classroom like this because people will see that little vortex, that smoke ring coming towards them and lean back just a little, and then it hits them and their hair just goes up and down. And if you do it without the smoke, some poor soul is sitting there wondering what on earth is everyone worried worried about as it comes by and hits them.
+
+They're a lot of fun to play with. So does that make sense? So it's that's a convenient place to talk about how the disturbance travels, but the actual air particles don't in most sound. So the business of Elmer Fudd Bugs Bunny sneaking up behind Elmer Fudd and blowing the horn so loudly, it blows the hat off of his head. It's not the sound.
+
+It's the fact that, sorry, it's not the air moving that knocks the hat off his head. It's that he gets startled and jerks. I don't know if anybody watches those cartoons anymore. I'm yeah. Sorry about the squirrel.
+
+Go ahead. Oh, well, what's the requirements for resonance? The requirements for resonance. So the cause resonance, we need something that has a frequency it likes, and we need to nudge it at that frequency or at least near that frequency. So think of your kid's sister on the swing.
+
+Because of the length of the swing and gravity, there's a frequency she likes. And I can give her a small nudge of that frequency, and it's resonance. It doesn't take now here's now let's talk about the other half. We can recognize resonance because a small effort creates a large motion. Oh, way too big.
+
+Sorry. Tell me to roll scroll up and down. There's the sound intensity level at the bottom. Yes, please. K.
+
+So energy is our ability to do work or cause damage. Power is how quickly we do work or cause damage or deliver energy. So a powerful thing does a lot of work really quickly. So as equations go, power is work or energy divided by the amount of climate plates. And power comes in watts.
+
+So the power company thinks they're doing work for us when they turn on the light bulb for us. Cool. Well, thanks for the company. Good luck. Thank you.
+
+You bet. Let's see if that will fit just a little better. No offense. I don't have a way to pick the exact zoom size, do I? And then I messed it up.
+
+Come on. Test closes Friday. Right? Yes. It closes Friday.
+
+Thank you. You bet. Thank you. Thank you. You're welcome.
+
+Annika, Corinne, Journey, where do I need to talk about the ones you care about? We've lost all of the place to be true. I think I can do the video on the exam. Okay. Cool.
+
+Yeah. Anyone else concerned or got questions? Yep. I'm good. Thank you.
+
+You bet. Thank you, Journey. Guess I'll see you Friday. Sounds great. Come loaded with fun questions.
+
+Uh-huh. Thank you. You're welcome. Thank you, Annika. Interesting.
+
+I always keep thinking they're gonna take a while, and they don't. Stop recording.
