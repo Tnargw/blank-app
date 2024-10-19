@@ -1,65 +1,72 @@
 import streamlit as st
-import json
-import pyaudio
-import asyncio
-import websockets
+import requests
+import assemblyai as aai
+import time  # Import time for sleep
+from streamlit_mic_recorder import speech_to_text
 
-# AssemblyAI API key
-API_KEY = '788835bce5f4408b864bd438b695379a'
+state = st.session_state
 
-# Streamlit App
-st.title("Real-Time Speech to Text Transcription")
-st.write("Speak something Pl0x...")
 
-# Placeholder for displaying transcription
-transcription_placeholder = st.empty()
+# Set up AssemblyAI API key
+aai.settings.api_key = "788835bce5f4408b864bd438b695379a"
 
-# Audio stream settings
-CHUNK = 4096  # Number of audio frames per buffer
-FORMAT = pyaudio.paInt16  # 16-bit PCM format
-CHANNELS = 1  # Mono audio
-RATE = 16000  # Sample rate in Hz (required by AssemblyAI)
+# Title for the app
+st.title("Trascribe and Translate!")
+tab1, tab2, tab3 = st.tabs(["Record Audio", "Input MP3/MP4", "Secret"])
 
-# Initialize PyAudio
-audio = pyaudio.PyAudio()
+state.text_received = []
 
-# Function to handle incoming WebSocket messages
-async def on_message(websocket):
-    async for message in websocket:
-        response = json.loads(message)
-        if 'text' in response:
-            transcription_placeholder.markdown(f"**Transcription:** {response['text']}")
 
-async def on_open(websocket):
-    print("WebSocket Connection Opened")
+with tab1:    
+        st.write("Convert speech to text:")
+        text = speech_to_text(language='en', use_container_width=True, just_once=True, key='STT')
+        state.text_received.append(text)
+        for text in state.text_received:
+            st.text(text)
 
-    # Open the microphone stream and send audio data in chunks
-    stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
 
-    # Sending audio data to WebSocket in chunks
-    while True:
-        try:
-            data = stream.read(CHUNK, exception_on_overflow=False)
-            await websocket.send(data)
-        except Exception as e:
-            print(f"Error sending audio: {e}")
-            break
 
-# WebSocket connection to AssemblyAI using websockets
-async def start_transcription():
-    ws_url = f"wss://api.assemblyai.com/v2/realtime/ws?sample_rate={RATE}"
+# File uploader for MP3 and MP4 files
+with tab2:
+    uploaded_file = st.file_uploader("Choose an MP3 or MP4 file", type=["mp3", "mp4"])
+
+if uploaded_file is not None:
+    # Read the file as bytes
+    audio_bytes = uploaded_file.read()
+    
+    # Upload audio to AssemblyAI
     headers = {
-        "Authorization": API_KEY
+        'authorization': aai.settings.api_key,
+        'content-type': 'application/json'
     }
+    upload_url = "https://api.assemblyai.com/v2/upload"
     
-    # Connect to AssemblyAI WebSocket
-    async with websockets.connect(ws_url, extra_headers=headers) as websocket:
-        await on_open(websocket)
-        await on_message(websocket)
+    # Send the audio file to AssemblyAI
+    response = requests.post(upload_url, headers=headers, data=audio_bytes)
+    
+    if response.status_code == 200:
+        upload_response = response.json()
+        audio_url = upload_response['upload_url']
+        
+        # Transcribe the audio file
+        transcript_response = aai.Transcriber().transcribe(audio_url)
+        
+        # Wait for the transcription to complete
+        while transcript_response.status != 'completed':
+            time.sleep(5)  # Wait for a few seconds before checking again
+            transcript_response = aai.Transcriber().get_by_id(transcript_response.id)
+        
+        # Retrieve the transcription text
+        transcript_text = transcript_response.text
+        st.write("Transcription:")
+        st.write(transcript_text)
+    else:
+        st.error("Error uploading audio file: " + response.text)
 
-# Streamlit button to start transcription
-if st.button("Start Transcription"):
-    st.write("Transcription started...")
-    
-    # Run the WebSocket connection and microphone streaming in a single async event loop
-    asyncio.run(start_transcription())
+with tab3:
+     if st.button("DO NOT PUSH"):
+        st.balloons()
+
+
+
+# Ima go back to the land of dis where it runs on my own computer... Nevermind it doesnt run on dis
